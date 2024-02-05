@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('event_id')->constrained();
-            $table->foreignId('order_id')->constrained();
+            $table->foreignId('order_id')->nullable()->constrained();
             $table->integer('qty');
-            $table->enum('status_pemabayaran', ['pending', 'rejected']);
+            $table->enum('status_pembayaran', ['pending', 'rejected']);
             $table->integer('price_total');
             $table->string('bukti_pembayaran')->nullable();
             $table->timestamps();

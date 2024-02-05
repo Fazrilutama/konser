@@ -15,12 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         User::create([
             'name'=>'admin',
@@ -59,7 +53,7 @@ class DatabaseSeeder extends Seeder
             'time'=> date('H:i:s', strtotime('19:00')),
             'location'=>'dijalan jalan mana aja ',
             'venue'=>'dimana aja yang kosong',
-            'price'=>50.000,
+            'price'=>50000,
             'status'=>'active'
         ]);
 
@@ -72,9 +66,10 @@ class DatabaseSeeder extends Seeder
             'time'=> date('H:i:s', strtotime('19:00')),
             'location'=>'kec cikembar ',
             'venue'=>'Rumah fazril',
-            'price'=>100.000,
+            'price'=>100000,
             'status'=>'active'
         ]);
+        
         event::create([
             'name'=>'kangen band',
             'image'=>'img/kangenband.jpg',

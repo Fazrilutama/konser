@@ -1,7 +1,7 @@
 @extends('template.html')
 
 @section('title', 'Login')
-    
+    @include('template.nav')
 @section('body')
     
 

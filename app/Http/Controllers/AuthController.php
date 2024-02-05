@@ -57,11 +57,11 @@ class AuthController extends Controller
 
         $user = Auth::user();
         if ($user->role === 'admin') {
-            return redirect()-route('admin');
+            return redirect()->route('admin');
         } else if ($user->role === 'kasir') {
-            return redirect()->route('kasir');
+            return redirect()->route('admin');
         } else if ($user->role === 'owner') {
-            return redirect()-route('owner');
+            return redirect()->route('admin');
         } else {
             return redirect()->route('home');
         }
@@ -74,6 +74,10 @@ class AuthController extends Controller
             Auth::logout();
         }
         return redirect()->route('home');
+    }
+
+    public function admin(){
+        return view('home');
     }
 
 }
