@@ -72,4 +72,11 @@ class HomeController extends Controller
 
         return redirect()->route('keranjang');
     }
+
+
+    public function batalkanpesanan(detailOrder $detailOrder)
+    {
+        $detailOrder->delete();
+        return redirect()->route('home')->with('notif','Pesanan berhasil dibatalkan');
+    }
 }

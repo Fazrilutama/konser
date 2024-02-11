@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/adminHome', [AdminController::class, 'admin'])->name('admin');
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 Route::get('/detail/{event}', [HomeController::class, 'detail'])->name('detail');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -32,6 +32,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/keranjang', [HomeController::class, 'keranjang'])->name('keranjang');
 Route::post('/postKeranjang/{event}', [HomeController::class, 'postKeranjang'])->name('postKeranjang');
 
+Route::get('/batalkanpesanan/{detailorder}', [HomeController::class, 'batalkanpesanan'])->name('batalkanpesanan');
+
+
 Route::get('/bayar/{detailOrder}', [HomeController::class, 'bayar'])->name('bayar');
 Route::post('/postBayar/{detailOrder}', [HomeController::class, 'postBayar'])->name('postBayar');
 
@@ -42,8 +45,16 @@ Route::get('/admin/events', [AdminController::class, 'events'])->name('admin');
 Route::post('/admin/events/{event}', [AdminController::class, 'updateEventStatus'])->name('events.update-status');
 Route::get('/admin/tambah', [AdminController::class, 'tambah'])->name('tambah');
 Route::post('/admin/postTambah', [AdminController::class, 'postTambah'])->name('admin.postTambah');
+Route::get('/admin/edit/{event}', [AdminController::class, 'edit'])->name('edit');
+Route::post('/admin/postEdit/{event}', [AdminController::class, 'postEdit'])->name('admin.postEdit');
+Route::get('/hapus/{event}', [AdminController::class, 'hapus'])->name('hapus');
+
+
 
 // Kasir
-Route::get('/kasir/events/{event}', [KasirController::class, 'events'])->name('event');
+Route::get('/admin/orders', [KasirController::class, 'pendingOrders'])->name('orders');
+Route::post('/admin/orders/{detailOrder}/update-status', [KasirController::class, 'updateOrderStatus'])->name('orders.update-status');
+Route::get('/admin/riwayat', [KasirController::class, 'completedRejectedOrders'])->name('riwayat');
+
 
 

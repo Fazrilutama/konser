@@ -59,4 +59,40 @@ class AdminController extends Controller
         return redirect()->route('admin');
         
     }
+
+    public function edit(event $event)
+    {
+        return view('crud.edit',compact('event'));
+        
+    }
+
+
+
+    public function postEdit(request $request,event $event)
+    {
+        $data = $request->validate([
+            'name'=>'required',
+            'image'=>'required',
+            'deskripsi'=>'required',
+            'date'=>'required',
+            'stock'=>'required',
+            'time'=>'required',
+            'location'=>'required',
+            'venue'=>'required',
+            'price'=>'required',
+        ]);
+        if ($request->hasFile('foto')) {
+            $data['image'] = $request->image->store('img');
+        } else {
+            unset($data['image']);
+        }
+
+        $event->update($data);
+        return redirect()->route('admin')->with('berhasil', 'Event Berhasil Di Edit');
+    }
+
+    public function hapus(event $event){
+        $event->delete();
+        return redirect()->route('admin');
+    }   
 }

@@ -33,7 +33,7 @@ class AuthController extends Controller
 
         $user->save();
 
-        return redirect()->route('login');
+        return redirect()->route('login')->with('notif', 'Anda Berhasil registrasi silahkan login');
     }
 
 
@@ -65,7 +65,7 @@ class AuthController extends Controller
         } else {
             return redirect()->route('home');
         }
-        return redirect()->route('home');
+        return redirect()->route('home')->with('notif', 'Loggin Success');;
     }
 
 

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date');
             $table->integer('stock');
             $table->time('time');
-            $table->string('location');
+            $table->text('location');
             $table->string('venue');
             $table->integer('price');
             $table->enum('status', ['active', 'inactive']);
