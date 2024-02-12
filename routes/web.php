@@ -38,6 +38,8 @@ Route::get('/batalkanpesanan/{detailorder}', [HomeController::class, 'batalkanpe
 Route::get('/bayar/{detailOrder}', [HomeController::class, 'bayar'])->name('bayar');
 Route::post('/postBayar/{detailOrder}', [HomeController::class, 'postBayar'])->name('postBayar');
 
+Route::get('/printInvoiceTicket/{id}', [HomeController::class, 'printInvoiceTicket'])->name('printInvoiceTicket');
+
 
 // Admin
 
@@ -49,6 +51,7 @@ Route::get('/admin/edit/{event}', [AdminController::class, 'edit'])->name('edit'
 Route::post('/admin/postEdit/{event}', [AdminController::class, 'postEdit'])->name('admin.postEdit');
 Route::get('/hapus/{event}', [AdminController::class, 'hapus'])->name('hapus');
 
+Route::get('/printRiwayatTransaksi', [AdminController::class, 'printRiwayatTransaksi'])->name('printRiwayatTransaksi');
 
 
 // Kasir

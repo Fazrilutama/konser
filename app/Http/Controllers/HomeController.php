@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\detailOrder;
 use App\Models\event;
 use App\Models\order;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -81,5 +82,26 @@ class HomeController extends Controller
         $detailOrder = detailOrder::find($id);
         $detailOrder->delete();
         return redirect()->route('home')->with('notif','Pesanan berhasil dibatalkan');
+    }
+
+    public function printInvoiceTicket($id)
+    {
+        // Retrieve the DetailOrder with the specified ID along with its related Order and Event
+        $detailOrder = detailOrder::with(['order', 'event','user'])->find($id);
+
+        if (!$detailOrder) {
+            abort(404); // Handle the case when DetailOrder is not found
+        }
+
+        // Pass the data to the Blade view
+        $data = [
+            'detailOrder' => $detailOrder,
+        ];
+
+        // Generate PDF using barryvdh/laravel-dompdf
+        $pdf = PDF::loadView('invoice-ticket', $data);
+
+        // Download the PDF with a custom filename
+        return $pdf->download($detailOrder->order->code . '.pdf');
     }
 }

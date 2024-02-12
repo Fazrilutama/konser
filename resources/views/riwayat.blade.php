@@ -57,7 +57,7 @@
                                Rp. {{ number_format($detailOrder->price_total, 0, ',', '.') }}
                             </td>
                             <td class="px-6 py-4">
-                                <p class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">Print</p>
+                                <a href="{{ route('printRiwayatTransaksi') }}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">Print</a>
                             </td>
                             @endforeach
                         </tr>
