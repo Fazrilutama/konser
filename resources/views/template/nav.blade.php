@@ -7,7 +7,6 @@
                 <div class="flex items-center gap-10 ">
                     <a href="/" class="text-white font-semibold hover:text-emerald-400">Home</a>
                     <a href="{{ route('keranjang') }}" class="text-white font-semibold hover:text-emerald-400">Orders</a>
-                    <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">Riwayat</a>
                     <a href="#about" class="text-white font-semibold hover:text-emerald-400">About</a>
                     <a href="#event" class="text-white font-semibold hover:text-emerald-400">Event</a>
                     <a href="#brands" class="text-white font-semibold hover:text-emerald-400">Brands</a>

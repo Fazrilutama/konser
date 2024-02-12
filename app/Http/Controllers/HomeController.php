@@ -22,7 +22,9 @@ class HomeController extends Controller
     }
 
     public function keranjang(){
-        $detailOrder = detailOrder::with('event')->get();
+
+        $userId = auth()->user()->id;
+        $detailOrder = detailOrder::with('event')->where('user_id', $userId)->get();
         return view('keranjang', compact('detailOrder'));
     }
 
@@ -74,8 +76,9 @@ class HomeController extends Controller
     }
 
 
-    public function batalkanpesanan(detailOrder $detailOrder)
+    public function batalkanpesanan($id)
     {
+        $detailOrder = detailOrder::find($id);
         $detailOrder->delete();
         return redirect()->route('home')->with('notif','Pesanan berhasil dibatalkan');
     }

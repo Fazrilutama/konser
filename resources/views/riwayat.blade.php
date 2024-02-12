@@ -39,7 +39,7 @@
                 <tr class="">
                         @foreach ($order->detailOrder as $detailOrder)
                             <td scope="row" class="px-6 py-4">
-                                {{ $loop->iteration }}
+                                {{ $loop->index + 1 }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $order->code }}
