@@ -50,12 +50,12 @@
                 <td>{{ $order->created_at }}</td>
                 <td>{{ $order->code }}</td>
                 <td>
-                    @foreach ($order->detailOrders as $detailOrder)
-                        {{ $detailOrder->event->nama }}
+                    @foreach ($order->detailOrder as $detailOrder)
+                        {{ $detailOrder->event->name }}
                     @endforeach
                 </td>
                 <td>
-                    @foreach ($order->detailOrders as $detailOrder)
+                    @foreach ($order->detailOrder as $detailOrder)
                         {{ $detailOrder->status_pembayaran }}
                     @endforeach
                 </td>
@@ -63,10 +63,10 @@
                     @php
                         $orderTotal = 0; // Total harga per order
                     @endphp
-                    @foreach ($order->detailOrders as $detailOrder)
+                    @foreach ($order->detailOrder as $detailOrder)
                         @php
-                            $orderTotal += $detailOrder->pricetotal; // Menambahkan harga detail order ke total order
-                            $totalPrice += $detailOrder->pricetotal; // Menambahkan harga detail order ke total harga
+                            $orderTotal += $detailOrder->price_total; // Menambahkan harga detail order ke total order
+                            $totalPrice += $detailOrder->price_total; // Menambahkan harga detail order ke total harga
                         @endphp
                     @endforeach
                     Rp. {{ number_format($orderTotal, 0, ',', '.') }} <!-- Menampilkan total harga order -->

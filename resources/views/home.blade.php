@@ -9,12 +9,12 @@
     <div>
         <div class="h-screen bg-cover " style="background-image: url('{{ asset('/img/bg-4.jpg') }}');" id="home" >
             <div class=" container mx-auto ">
-                <div class="pt-60 pl-28">
-                    <h1 class="text-white text-8xl font-black tracking-wider"><span
+                <div class="pt-60 pl-10 md:pl-28">
+                    <h1 class="text-white text-5xl md:text-8xl font-black tracking-wider"><span
                             class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">INFOSMI</span>
                     </h1>
-                    <h1 class="text-white text-8xl font-black tracking-wider">FESTIVAL</h1>
-                    <p class="w-[500px] text-white text-base tracking-wider ">Lorem ipsum dolor sit
+                    <h1 class="text-white text-5xl md:text-8xl font-black tracking-wider">FESTIVAL</h1>
+                    <p class="w-[250px] md:w-[500px] text-white text-sm md:text-base tracking-wider ">Lorem ipsum dolor sit
                         amet consectetur adipisicing elit. Mollitia porro, reiciendis tenetur eveniet obcaecati temporibus!
                     </p>
                 </div>

@@ -44,6 +44,7 @@
                                 <td class="px-6 py-4">{{ $loop->iteration }}</td>
 
                             <td scope="row" class="px-6 py-4 ">
+                                
                                 {{ $detailOrder->event->name }}
                             </td>
                             <td class="px-6 py-4">
