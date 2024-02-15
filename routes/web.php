@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KasirController;
+use App\Http\Controllers\OwnerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,5 +60,6 @@ Route::get('/admin/orders', [KasirController::class, 'pendingOrders'])->name('or
 Route::post('/admin/orders/{detailOrder}/update-status', [KasirController::class, 'updateOrderStatus'])->name('orders.update-status');
 Route::get('/admin/riwayat', [KasirController::class, 'completedRejectedOrders'])->name('riwayat');
 
+//owner
 
-
+Route::get('/owner', [OwnerController::class, 'owner'])->name('owner');

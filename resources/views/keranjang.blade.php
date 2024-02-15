@@ -7,7 +7,7 @@
     <div class="mt-20 ">
         <div class="container mx-auto">
             <div class="my-10">
-                <p class="text-xl py-3">Keranjang</p>
+                <p class="text-3xl font-bold py-3 ml-64">Keranjang</p>
             </div>
             @foreach ($detailOrder as $do)
                 <div class="flex items-center justify-around max-w-screen-lg mx-auto py-5 border shadow-xl my-8">

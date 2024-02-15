@@ -77,9 +77,6 @@
             </tbody>
         </table>
 
-        @foreach ($order->detailOrder as $detailOrder)
-        @endforeach
-
 
         <div class="grid grid-cols-2 container mx-auto my-14">
             <div class="border bg-slate-100 shadow-md py-10 mx-20">

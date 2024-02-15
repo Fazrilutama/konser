@@ -33,9 +33,14 @@
                 </div>
             </div>
         @elseif (auth()->user()->role == 'owner')
-            <a href="" class="text-white font-semibold hover:text-emerald-400">owner</a>
-            <a href="" class="text-white font-semibold hover:text-emerald-400">owner</a>
-            <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400 ">logout</a>
+        <div class="flex items-center text-lg justify-between mx-8">
+            <img src="/img/logo.png" alt="" class="w-20">
+            <div class="flex items-center gap-10 ">
+                <a href="/owner" class="text-white font-semibold hover:text-emerald-400">Home</a>
+                <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">riwayat</a>
+                <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">logout</a>
+            </div>
+        </div>
         @endif
     @else
         <div class=" container mx-auto  ">

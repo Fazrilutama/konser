@@ -14,7 +14,7 @@
                             class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">INFOSMI</span>
                     </h1>
                     <h1 class="text-white text-5xl md:text-8xl font-black tracking-wider">FESTIVAL</h1>
-                    <p class="w-[250px] md:w-[500px] text-white text-sm md:text-base tracking-wider ">Lorem ipsum dolor sit
+                    <p class="w-[250px] md:w-[500px] text-white text-base md:text-base tracking-wider ">Lorem ipsum dolor sit
                         amet consectetur adipisicing elit. Mollitia porro, reiciendis tenetur eveniet obcaecati temporibus!
                     </p>
                 </div>
@@ -23,7 +23,7 @@
         <div>
             <div class="container mx-auto my-20" id="about" >
                 <div class="text-center mx-auto max-w-3xl">
-                    <h1 class="text-3xl font-medium">ABOUT</h1>
+                    <h1 class="text-3xl font-medium my-3">ABOUT</h1>
                     <h1 class="text-5xl text-gray-900 font-bold tracking-wider">INFOSMI FESTIVAL</h1>
                     <p class="mt-8 text-base tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
                         delectus sint, incidunt expedita enim molestiae inventore. Odio fugiat at quia accusantium, sed
