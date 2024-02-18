@@ -5,40 +5,39 @@
             <div class="flex items-center text-lg justify-between mx-8">
                 <img src="/img/logo.png" alt="" class="w-20">
                 <div class="flex items-center gap-10 ">
-                    <a href="/" class="text-white font-semibold hover:text-emerald-400">Home</a>
+                    <a href="/" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
                     <a href="{{ route('keranjang') }}" class="text-white font-semibold hover:text-emerald-400">Orders</a>
-                    <a href="#about" class="text-white font-semibold hover:text-emerald-400">About</a>
                     <a href="#event" class="text-white font-semibold hover:text-emerald-400">Event</a>
                     <a href="#brands" class="text-white font-semibold hover:text-emerald-400">Brands</a>
-                    <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">logout</a>
+                    <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">Logout</a>
                 </div>
             </div>
         @elseif (auth()->user()->role == 'admin')
             <div class="flex items-center text-lg justify-between mx-8">
                 <img src="/img/logo.png" alt="" class="w-20">
                 <div class="flex items-center gap-10 ">
-                    <a href="/admin/events" class="text-white font-semibold hover:text-emerald-400">Home</a>
-                    <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">riwayat</a>
-                    <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">logout</a>
+                    <a href="/admin/events" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
+                    <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">Riwayat</a>
+                    <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">Logout</a>
                 </div>
             </div>
         @elseif (auth()->user()->role == 'kasir')
             <div class="flex items-center text-lg justify-between mx-8">
                 <img src="/img/logo.png" alt="" class="w-20">
                 <div class="flex items-center gap-10 ">
-                    <a href="/admin/events" class="text-white font-semibold hover:text-emerald-400">Home</a>
+                    <a href="/admin/events" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
                     <a href="{{ route('orders') }}" class="text-white font-semibold hover:text-emerald-400">Order</a>
-                    <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">riwayat</a>
-                    <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">logout</a>
+                    <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">Riwayat</a>
+                    <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">Logout</a>
                 </div>
             </div>
         @elseif (auth()->user()->role == 'owner')
         <div class="flex items-center text-lg justify-between mx-8">
             <img src="/img/logo.png" alt="" class="w-20">
             <div class="flex items-center gap-10 ">
-                <a href="/owner" class="text-white font-semibold hover:text-emerald-400">Home</a>
-                <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">riwayat</a>
-                <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">logout</a>
+                <a href="/owner" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
+                <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">Riwayat</a>
+                <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">Logout</a>
             </div>
         </div>
         @endif
@@ -49,8 +48,7 @@
                     <img src="/img/logo.png" alt="" class="w-20">
                 </a>
                 <div class="flex items-center gap-10 ">
-                    <a href="#home" class="text-white font-semibold hover:text-emerald-400">Home</a>
-                    <a href="#about" class="text-white font-semibold hover:text-emerald-400">About</a>
+                    <a href="#home" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
                     <a href="#event" class="text-white font-semibold hover:text-emerald-400">Event</a>
                     <a href="#brands" class="text-white font-semibold hover:text-emerald-400">Brands</a>
                     <a href="/login" class="text-white font-semibold hover:text-emerald-400">Login</a>

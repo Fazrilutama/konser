@@ -19,21 +19,21 @@
             </div>
             <div class="mx-5 grid grid-cols-3 my-10">
                 <div class="text-center">
-                    <p class="font-bold text-xl">Date</p>
+                    <p class="font-bold text-xl">Waktu</p>
                     <p class="mt-3">{{ $event->date }}</p>
                 </div>
                 <div class="text-center">
-                    <p class="font-bold text-xl">Time</p>
+                    <p class="font-bold text-xl">Jam</p>
                     <p class="mt-3">{{ $event->time }}</p>
                 </div>
                 <div class="text-center">
-                    <p class="font-bold text-xl">Venue</p>
+                    <p class="font-bold text-xl">Lokasi</p>
                     <p class="mt-3">{{ $event->venue }}</p>
                 </div>
             </div>
             <div class="md:grid md:grid-cols-2 xl:px-6">
                 <div class="mx-5 my-10 ">
-                    <h2 class="font-bold text-xl mb-5">Location map</h2>
+                    <h2 class="font-bold text-xl mb-5">Link map</h2>
                     <iframe src="{{ $event->location }}" class="w-full h-44 md:h-64 " frameborder="0"></iframe>
                 </div>
                 <div class="mx-5 my-10 ">
@@ -41,10 +41,10 @@
                         <h2 class="font-bold text-xl">Dapatkan Tiket {{ $event->name }}</h2>
                         <div class="mt-5">
                             <p class="font-bold text-xl">Harga</p>
-                            Rp. {{ number_format($event->price, 0, ',', '.') }} / Ticket
+                            Rp. {{ number_format($event->price, 0, ',', '.') }} / Tiket
                         </div>
                         <div>
-                            <p class="font-bold text-xl">Jumlah Ticket</p>
+                            <p class="font-bold text-xl">Jumlah Tiket</p>
                             <input type="number" name="banyak" class="p-2 bg-slate-300  rounded-md" required
                                 value="1" min="1">
                         </div>
