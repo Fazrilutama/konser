@@ -16,7 +16,7 @@
                     required>
             </div>
             <div class="mb-5">
-                <label class="block mb-2 text-sm font-medium text-gray-900">Image</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Foto</label>
                 <input type="file" name="image" id="image"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 d"
                     required>
@@ -28,7 +28,7 @@
                     required>
             </div>
             <div class="mb-5">
-                <label class="block mb-2 text-sm font-medium text-gray-900">date</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Waktu</label>
                 <input type="date" name="date" id="date"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 d"
                     required>
@@ -40,19 +40,19 @@
                     required>
             </div>
             <div class="mb-5">
-                <label class="block mb-2 text-sm font-medium text-gray-900">time</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Jam</label>
                 <input type="time" name="time" id="time"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 d"
                     required>
             </div>
             <div class="mb-5">
-                <label class="block mb-2 text-sm font-medium text-gray-900">location</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900">LinkMaps</label>
                 <input type="text" name="location" id="location"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 d"
                     required>
             </div>
             <div class="mb-5">
-                <label class="block mb-2 text-sm font-medium text-gray-900">venue</label>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Lokasi</label>
                 <input type="text" name="venue" id="venue"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 d"
                     required>
@@ -67,8 +67,8 @@
                 <label class="block mb-2 text-sm font-medium text-gray-900">Status</label>
                 <select name="status"
                     id="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 d">
-                    <option value="active">active</option>
-                    <option value="inactive">inactive</option>
+                    <option value="active">Aktif</option>
+                    <option value="inactive">Non Aktif</option>
                 </select>
             </div>
             <button type="submit"

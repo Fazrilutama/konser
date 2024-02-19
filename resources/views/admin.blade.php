@@ -22,7 +22,7 @@
                         Name
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Image
+                        Foto
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Waktu Acara
@@ -35,7 +35,7 @@
                     </th>
                     @if (auth()->user()->role == 'kasir')
                         <th scope="col" class="px-6 py-3">
-                            location
+                            LinkMaps
                         </th>
                     @endif
                     @if (auth()->user()->role == 'admin')
@@ -84,10 +84,10 @@
                                     {{-- <label for="status" class=""> Update Status</label> --}}
                                     <div>
                                         <select name="status" id="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2 w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                            <option value="active" {{ $event->status == 'active' ? 'selected' : '' }}>active
+                                            <option value="active" {{ $event->status == 'active' ? 'selected' : '' }}>Aktif
                                             </option>
                                             <option value="inactive" {{ $event->status == 'inactive' ? 'selected' : '' }}>
-                                                inactive</option>
+                                                NonAktif</option>
                                         </select>
                                         <button type="submit" class="text-gray-900 w-full mt-1 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Update</button>
                                     </div>
