@@ -22,10 +22,10 @@
         </div>
         <div>
             <div class="container mx-auto my-20" id="about" >
-                <div class="text-center mx-auto max-w-3xl">
+                <div class="text-center mx-5 md:mx-auto max-w-3xl">
                     <h1 class="text-3xl font-medium my-3">ABOUT</h1>
-                    <h1 class="text-5xl text-gray-900 font-bold tracking-wider">INFOSMI FESTIVAL</h1>
-                    <p class="mt-8 text-base tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                    <h1 class="text-2xl md:text-5xl text-gray-900 font-bold tracking-wider">INFOSMI FESTIVAL</h1>
+                    <p class="mt-8 text-xs md:text-base tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
                         delectus sint, incidunt expedita enim molestiae inventore. Odio fugiat at quia accusantium, sed
                         magnam rerum itaque laudantium! Necessitatibus animi ad recusandae.</p>
                 </div>
@@ -34,7 +34,7 @@
         <div class="bg-neutral-100 pb-32 pt-10" id="event">
             <div class="container mx-auto  ">
                 <h1 class="text-3xl font-bold p-5">List Event</h1>
-                <div class=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-10  ">
+                <div class=" grid grid-cols-1 mx-5 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-10  ">
                     @foreach ($e as $event)
                         <div class="p-4 shadow-xl rounded-xl">
                             <div class="">
@@ -54,8 +54,8 @@
             </div>
         </div>
         <div class="bg-center bg-cover pt-20" style="background-image: url('{{ asset('/img/bg-1.jpg') }}');">
-            <div class="h-80 flex flex-col items-center justify-center text-white">
-                <h1 class="text-white text-4xl font-black tracking-wide">DAPATKAN TIKET ANDA SEKARANG!!</h1>
+            <div class="h-80 flex flex-col mx-5 items-center justify-center text-white">
+                <h1 class="text-white text-md md:text-xl lg:text-4xl font-black md:tracking-wide">DAPATKAN TIKET ANDA SEKARANG!</h1>
 
                 <a href="#event"
                     class="text-white bg-gradient-to-br mt-8 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">DAPATKAN
@@ -69,8 +69,8 @@
                     Kami merasa senang bisa bekerja sama dengan merek-merek ternama dalam industri. Ini hanyalah beberapa di
                     antaranya.</p>
             </div>
-            <div class="flex gap-16 flex-wrap justify-evenly my-20">
-                <div class="w-60 flex justify-center items-center">
+            <div class="grid grid-cols-2 mx-5 md:flex gap-16 md:flex-wrap md:justify-evenly my-20">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/1.png" alt="" width="125">
                 </div>
                 <div class="w-60 flex justify-center items-center">
@@ -102,7 +102,7 @@
             </div>
         </div>
         <div class="bg-neutral-900 pt-5">
-            <div class="container mx-auto grid grid-cols-3 border-b-2 py-5">
+            <div class="container mx-auto  grid grid-cols-3 border-b-2 py-5">
                 <div class="flex flex-col items-center justify-center text-center mx-10 text-white">
                     <img src="/img/logo.png" alt="" class="w-32">
                     <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla et nihil tenetur iusto
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="flex flex-col items-center">
-                    <h1 class="text-white text-2xl font-bold">Social Media</h1>
+                    <h1 class="text-white text-center text-2xl font-bold">Social Media</h1>
                     <div class="flex flex-col justify-center items-center gap-3 mt-10">
 
                         <div class="flex  justify-center items-center gap-2">

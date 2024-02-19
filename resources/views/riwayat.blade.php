@@ -82,7 +82,7 @@
             <div class="border bg-slate-100 shadow-md py-10 mx-20">
                 <h1 class="text-center mb-5 text-xl font-bold">cari data</h1>
                 <form action="{{ route('riwayat') }}" class="">
-                    <div class="flex gap-10 ml-[30%]">
+                    <div class="flex justify-evenly gap-5">
                         <div class="flex flex-col gap-3 ">
                             <label for="start_date">Tanggal Awal</label>
                             <input type="date" id="start_date" name="start_date"
@@ -95,14 +95,14 @@
                         </div>
                     </div>
                     <button type="submit"
-                        class="ml-[30%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-5">Search</button>
+                        class="ml-24 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-5">Search</button>
                 </form>
             </div>
             <div class="border shadow-md py-10 bg-slate-100 mx-20">
                 <h1 class="text-center mb-5 text-xl font-bold">Print data</h1>
 
                 <form action="{{ route('printRiwayatTransaksi') }}" class="form-group">
-                    <div class="flex gap-10 ml-[30%]">
+                    <div class="flex gap-10 ml-24">
                         <div class="flex flex-col gap-3">
                             <label for="start_date">Tanggal Awal:</label>
                             <input type="date" id="start_date" name="start_date"
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <button type="submit"
-                        class="ml-[30%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-5">ExportPDf</button>
+                        class="ml-24 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-5">ExportPDf</button>
                 </form>
             </div>
         </div>

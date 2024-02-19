@@ -53,12 +53,14 @@ Route::post('/admin/postEdit/{event}', [AdminController::class, 'postEdit'])->na
 Route::get('/hapus/{event}', [AdminController::class, 'hapus'])->name('hapus');
 
 Route::get('/printRiwayatTransaksi', [AdminController::class, 'printRiwayatTransaksi'])->name('printRiwayatTransaksi');
+Route::get('/admin/log', [AdminController::class, 'log'])->name('log');
 
 
 // Kasir
 Route::get('/admin/orders', [KasirController::class, 'pendingOrders'])->name('orders');
 Route::post('/admin/orders/{detailOrder}/update-status', [KasirController::class, 'updateOrderStatus'])->name('orders.update-status');
 Route::get('/admin/riwayat', [KasirController::class, 'completedRejectedOrders'])->name('riwayat');
+    Route::get('/admin/log', [AdminController::class, 'log'])->name('log');
 
 //owner
 

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\event;
+use App\Models\log;
 use App\Models\order;
 use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -22,6 +24,11 @@ class AdminController extends Controller
 
         $event->update([
             'status'=> $request->status,
+        ]);
+
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->nama . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
         ]);
 
         return redirect()->route('admin');
@@ -58,6 +65,11 @@ class AdminController extends Controller
             'status'=>$request->status,
         ]);
 
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->nama . ' Menambah Event',
+        ]);
+
         return redirect()->route('admin');
         
     }
@@ -89,12 +101,23 @@ class AdminController extends Controller
             unset($data['image']);
         }
 
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role  . ' ' . Auth::user()->nama  . ' Mengedit Event ' . $event->nama,
+        ]);
+
         $event->update($data);
         return redirect()->route('admin')->with('berhasil', 'Event Berhasil Di Edit');
     }
 
     public function hapus(event $event){
         $event->delete();
+
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->role . ' Mengedit Event ' . $event->nama,
+        ]);
+
         return redirect()->route('admin');
     }   
 
@@ -121,5 +144,12 @@ class AdminController extends Controller
         // Mengunduh file PDF dengan nama tertentu
         return $pdf->download('Riwayat-Transaksi.pdf');
     }
+
+    public function log()
+    {
+        $log = log::all();
+        return view('log',compact('log'));
+    }
+
 
 }
