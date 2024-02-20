@@ -115,7 +115,7 @@ class AdminController extends Controller
 
         log::create([
             'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->role . ' Mengedit Event ' . $event->name,
+            'activity' => Auth::user()->role . ' ' . Auth::user()->role . ' Menghapus Event ' . $event->name,
         ]);
 
         return redirect()->route('admin');

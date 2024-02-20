@@ -28,15 +28,12 @@ class KasirController extends Controller
         return redirect()->route('admin');
     }
 
-    public function pendingOrders(event $event)
+    public function pendingOrders()
     {
         $pendingOrders = order::with('detailOrder')->whereHas('detailOrder', function ($query) {
             $query->where('status_pembayaran', 'pending');
         })->get();
-        log::create([
-            'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
-        ]);
+
 
         return view('order', compact('pendingOrders'));
     }

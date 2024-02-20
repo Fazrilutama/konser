@@ -74,23 +74,15 @@ class HomeController extends Controller
         $event = $detailOrder->event;
         $event->stock -= $detailOrder->qty;
         $event->save();
-        log::create([
-            'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' Merubah status event menjadi '. $event->status,
-        ]);
 
         return redirect()->route('keranjang');
     }
 
 
-    public function batalkanpesanan($id, event $event)
+    public function batalkanpesanan($id)
     {
         $detailOrder = detailOrder::find($id);
         $detailOrder->delete();
-        log::create([
-            'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' Merubah status event menjadi '. $event->status,
-        ]);
         return redirect()->route('home')->with('notif','Pesanan berhasil dibatalkan');
     }
 
