@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\detailOrder;
 use App\Models\event;
+use App\Models\log;
 use App\Models\order;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -51,6 +52,7 @@ class HomeController extends Controller
 
     public function bayar(Request $request, detailOrder $detailOrder){
         $event = $detailOrder->event;
+
         return view('bayar', compact('event', 'detailOrder'));
     }
 
@@ -72,15 +74,23 @@ class HomeController extends Controller
         $event = $detailOrder->event;
         $event->stock -= $detailOrder->qty;
         $event->save();
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' Merubah status event menjadi '. $event->status,
+        ]);
 
         return redirect()->route('keranjang');
     }
 
 
-    public function batalkanpesanan($id)
+    public function batalkanpesanan($id, event $event)
     {
         $detailOrder = detailOrder::find($id);
         $detailOrder->delete();
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' Merubah status event menjadi '. $event->status,
+        ]);
         return redirect()->route('home')->with('notif','Pesanan berhasil dibatalkan');
     }
 
@@ -102,6 +112,6 @@ class HomeController extends Controller
         $pdf = PDF::loadView('invoice-ticket', $data);
 
         // Download the PDF with a custom filename
-        return $pdf->download($detailOrder->order->code . '.pdf');
+        return $pdf->download($detailOrder->user->name . 'Invoice.pdf');
     }
 }

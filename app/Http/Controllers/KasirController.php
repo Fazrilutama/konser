@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\detailOrder;
 use App\Models\event;
+use App\Models\log;
 use App\Models\order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KasirController extends Controller
 {
@@ -18,15 +20,23 @@ class KasirController extends Controller
         $event->update([
             'status'=> $request->status,
         ]);
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
+        ]);
 
         return redirect()->route('admin');
     }
 
-    public function pendingOrders()
+    public function pendingOrders(event $event)
     {
         $pendingOrders = order::with('detailOrder')->whereHas('detailOrder', function ($query) {
             $query->where('status_pembayaran', 'pending');
         })->get();
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
+        ]);
 
         return view('order', compact('pendingOrders'));
     }
@@ -44,11 +54,15 @@ class KasirController extends Controller
         return redirect()->route('orders');
     }
 
-    public function completedRejectedOrders()
+    public function completedRejectedOrders(event $event)
     {
         $completedRejectedOrders = order::with('detailOrder')->whereHas('detailOrder', function ($query) {
             $query->whereIn('status_pembayaran', ['completed', 'rejected']);
         })->get();
+        log::create([
+            'user_id' => auth()->id(),
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
+        ]);
 
         return view('riwayat', compact('completedRejectedOrders'));
     }

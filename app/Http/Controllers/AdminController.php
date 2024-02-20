@@ -28,7 +28,7 @@ class AdminController extends Controller
 
         log::create([
             'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->nama . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' ' . 'Merubah status event menjadi' . ' ' . $event->status,
         ]);
 
         return redirect()->route('admin');
@@ -38,7 +38,7 @@ class AdminController extends Controller
         return view('crud.tambah');
     }
 
-    public function postTambah(Request $request){
+    public function postTambah(Request $request , event $event){
         $request->validate([
             'name'=>'required',
             'image'=>'required',
@@ -67,7 +67,7 @@ class AdminController extends Controller
 
         log::create([
             'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->nama . ' Menambah Event',
+            'activity' => Auth::user()->role . ' ' . Auth::user()->name . ' Menambah Event' , $event->name,
         ]);
 
         return redirect()->route('admin');
@@ -103,7 +103,7 @@ class AdminController extends Controller
 
         log::create([
             'user_id' => auth()->id(),
-            'activity' => Auth::user()->role  . ' ' . Auth::user()->nama  . ' Mengedit Event ' . $event->nama,
+            'activity' => Auth::user()->role  . ' ' . Auth::user()->name  . ' Mengedit Event ' . $event->name,
         ]);
 
         $event->update($data);
@@ -115,7 +115,7 @@ class AdminController extends Controller
 
         log::create([
             'user_id' => auth()->id(),
-            'activity' => Auth::user()->role . ' ' . Auth::user()->role . ' Mengedit Event ' . $event->nama,
+            'activity' => Auth::user()->role . ' ' . Auth::user()->role . ' Mengedit Event ' . $event->name,
         ]);
 
         return redirect()->route('admin');

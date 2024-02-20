@@ -7,7 +7,7 @@
         <h2 class="text-center text-2xl py-10 font-bold mb-2"> Log Aktifitas </h2>
 
 
-        <table class="w-full shadow-2xl text-sm text-left text-gray-700  mt-5 rounded-xl my-20">
+        <table class=" mx-auto shadow-2xl text-sm text-left text-gray-700  mt-5 rounded-xl my-20">
 
             <thead class="text-xs text-gray-700 uppercase bg-gray-300">
                 <tr>
@@ -15,7 +15,7 @@
                         No
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Taggal
+                        Tanggal
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Aktifitas
