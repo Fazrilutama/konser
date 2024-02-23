@@ -6,9 +6,9 @@
 
     <div class="mx-24  mt-24">
         <div class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold">List Event</h1>
+            <h1 class="text-2xl font-bold">Daftar Event</h1>
             @if (auth()->user()->role == 'admin')
-                <a href="{{ route('tambah') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tambah data</a>
+                <a href="{{ route('tambah') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tambah Event</a>
             @endif
         </div>
         <table class="w-full shadow-2xl text-sm text-left text-gray-700  mt-5 rounded-xl my-20">
@@ -40,7 +40,7 @@
                     @endif
                     @if (auth()->user()->role == 'admin')
                         <th scope="col" class="px-6 py-3">
-                            Update Status
+                            Pembaruan Status
                         </th>
                     @endif
                     @if (auth()->user()->role != 'kasir')
@@ -89,7 +89,7 @@
                                             <option value="inactive" {{ $event->status == 'inactive' ? 'selected' : '' }}>
                                                 NonAktif</option>
                                         </select>
-                                        <button type="submit" class="text-gray-900 w-full mt-1 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Update</button>
+                                        <button type="submit" class="text-gray-900 w-full mt-1 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Perbarui</button>
                                     </div>
                                 </form>
                             @endif

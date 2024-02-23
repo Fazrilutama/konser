@@ -45,19 +45,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         event::create([
-            'name'=>'Concer dewa 19',
-            'image'=>'img/dewa19.jpg',
-            'deskripsi'=>'dewa 19 ahmad dani and kawan kawan',
-            'date'=>date('Y-m-d', strtotime('2024-5-31')),
-            'stock'=>5000,
-            'time'=> date('H:i:s', strtotime('19:00')),
-            'location'=>'dijalan jalan mana aja ',
-            'venue'=>'dimana aja yang kosong',
-            'price'=>50000,
-            'status'=>'active'
-        ]);
-
-        event::create([
             'name'=>'Concer Jkt 48',
             'image'=>'img/jkt48.jpg',
             'deskripsi'=>'member jkt cuyy',
@@ -80,6 +67,66 @@ class DatabaseSeeder extends Seeder
             'location'=>'dijalan jalan mana aja ',
             'venue'=>'dimana aja yang kosong',
             'price'=>80.000,
+            'status'=>'active'
+        ]);
+        event::create([
+            'name'=>'Rizki Febian',
+            'image'=>'img/iki.jpg',
+            'deskripsi'=>'Rizki Febian',
+            'date'=>date('Y-m-d', strtotime('2024-06-25')),
+            'stock'=>5000,
+            'time'=> date('H:i:s', strtotime('19:00')),
+            'location'=>'Linkmaps ',
+            'venue'=>'Tempat Konsernya dimana.? ',
+            'price'=>100000,
+            'status'=>'active'
+        ]);
+        event::create([
+            'name'=>'Tulus',
+            'image'=>'img/tulus.jpg',
+            'deskripsi'=>'Deskripsi konser tulus',
+            'date'=>date('Y-m-d', strtotime('2024-04-28')),
+            'stock'=>5000,
+            'time'=> date('H:i:s', strtotime('19:00')),
+            'location'=>'Linkmaps ',
+            'venue'=>'Tempat Konsernya dimana.? ',
+            'price'=>100000,
+            'status'=>'active'
+        ]);
+        event::create([
+            'name'=>'NDX AXA',
+            'image'=>'img/ndx.jpeg',
+            'deskripsi'=>'Deskripsi konser NDX AXA',
+            'date'=>date('Y-m-d', strtotime('2024-12-09')),
+            'stock'=>5000,
+            'time'=> date('H:i:s', strtotime('17:00')),
+            'location'=>'Linkmaps ',
+            'venue'=>'Tempat Konsernya dimana.? ',
+            'price'=>100000,
+            'status'=>'active'
+        ]);
+        event::create([
+            'name'=>'Last Child',
+            'image'=>'img/lastChild.jpeg',
+            'deskripsi'=>'Deskripsi konser LasChild',
+            'date'=>date('Y-m-d', strtotime('2024-13-17')),
+            'stock'=>5000,
+            'time'=> date('H:i:s', strtotime('16:00')),
+            'location'=>'Samarinda lapang sempaja linkmaps ',
+            'venue'=>'Lap. parkir stadion sempaja samarinda ',
+            'price'=>100000,
+            'status'=>'active'
+        ]);
+        event::create([
+            'name'=>'Mahalini',
+            'image'=>'img/mahalini.jpeg',
+            'deskripsi'=>'Deskripsi konser Mahalini',
+            'date'=>date('Y-m-d', strtotime('2024-10-17')),
+            'stock'=>5000,
+            'time'=> date('H:i:s', strtotime('16:00')),
+            'location'=>'Sukabumi dimana aja ',
+            'venue'=>'pokonya di sukabumi ',
+            'price'=>100000,
             'status'=>'active'
         ]);
 
