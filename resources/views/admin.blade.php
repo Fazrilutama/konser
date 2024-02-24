@@ -96,11 +96,11 @@
 
                         </td>
                         @if (auth()->user()->role != 'kasir')
-                            <td class="">
+                            <td class="flex text-center justify-center items-center mt-8 gap-2">
                                 <a href="{{ route('edit', $event->id) }}"
                                     class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Edit</a>
                                 <a href="{{ route('hapus', $event->id) }}"
-                                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-3">Hapus</a>
+                                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Hapus</a>
                             </td>
                         @endif
                     </tr>

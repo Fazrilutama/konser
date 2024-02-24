@@ -2,9 +2,9 @@
     @auth
 
         @if (auth()->user()->role == 'user')
-            <div class="gap-3 flex items-center text-lg justify-between mx-3 md:mx-8">
+            <div class="flex items-center text-lg justify-between mx-3 md:mx-8">
                 <img src="/img/logo.png" alt="" class="w-14 md:w-20">
-                <div class="flex items-center gap-3 text-base md:text-xl md:gap-10 ">
+                <div class="flex items-center gap-3 text-sm md:text-xl md:gap-10 ">
                     <a href="/" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
                     <a href="{{ route('keranjang') }}" class="text-white font-semibold hover:text-emerald-400">Pesanan</a>
                     <a href="#event" class="text-white font-semibold hover:text-emerald-400">Event</a>
@@ -17,7 +17,6 @@
                 <img src="/img/logo.png" alt="" class="w-20">
                 <div class="flex items-center gap-10 md:text-xl">
                     <a href="/admin/events" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
-                    <a href="{{ route('log') }}" class="text-white font-semibold hover:text-emerald-400">log</a>
                     <a href="{{ route('riwayat') }}" class="text-white font-semibold hover:text-emerald-400">riwayat</a>
                     <a href="{{ route('logout') }}" class="text-white font-semibold hover:text-emerald-400">logout</a>
                 </div>

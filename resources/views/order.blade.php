@@ -39,28 +39,40 @@
             <tbody>
                 @foreach ($pendingOrders as $order)
                     <tr class="">
-                        @foreach ($order->detailOrder as $detailOrder)
 
                                 <td class="px-6 py-4">{{ $loop->iteration }}</td>
 
                             <td scope="row" class="px-6 py-4 ">
-                                
+                                @foreach ($order->detailOrder as $detailOrder)
                                 {{ $detailOrder->event->name }}
+                                @endforeach
                             </td>
                             <td class="px-6 py-4">
                                 {{ $order->code }}
                             </td>
                             <td class="px-6 py-4">
+                                @foreach ($order->detailOrder as $detailOrder)
+    
                                 {{ $detailOrder->status_pembayaran }}
+                                @endforeach
                             </td>
                             <td class="px-6 py-4">
+                                @foreach ($order->detailOrder as $detailOrder)
                                 Rp. {{ number_format($detailOrder->price_total, 0, ',', '.') }}
+                                    
+                                @endforeach
                             </td>
                             <td class="px-6 py-4">
+                                @foreach ($order->detailOrder as $detailOrder)
+                                    
                                 {{ $detailOrder->qty }}
+                                @endforeach
                             </td>
                             <td class="px-6 py-4">
-                                    <img src="{{ asset($detailOrder->bukti_pembayaran) }}" alt="Bukti Pembayaran" width="150" height="200">
+                                @foreach ($order->detailOrder as $detailOrder)
+                                <img src="{{ asset($detailOrder->bukti_pembayaran) }}" alt="Bukti Pembayaran" width="150" height="200">
+                                    
+                                @endforeach
                             </td>
                             <td class="px-6 py-4">
                                 <form action="{{ route('orders.update-status', $order->id) }}" method="POST">
@@ -76,7 +88,6 @@
                                         class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-2">Update</button>
                                 </form>
                             </td>
-                        @endforeach
                     </tr>
                 @endforeach
 

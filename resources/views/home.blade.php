@@ -6,15 +6,24 @@
 @section('body')
 
 
+
     <div>
+        @if (Session::has('bayar'))
+        <div class="p-4 mt-20 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            role="alert">
+            <span class="font-medium">{{ Session::get('bayar') }}</span>
+        </div>
+    @endif
         <div class="h-screen bg-cover " style="background-image: url('{{ asset('/img/bg-4.jpg') }}');" id="home">
             <div class=" container mx-auto ">
+
                 <div class="pt-60 pl-10 md:pl-28">
                     <h1 class="text-white text-5xl md:text-8xl font-black tracking-wider"><span
                             class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">INFOSMI</span>
                     </h1>
                     <h1 class="text-white text-5xl md:text-8xl font-black tracking-wider">FESTIVAL</h1>
-                    <p class="w-[250px] md:w-[500px] text-white text-base md:text-base tracking-wider ">Lorem ipsum dolor sit
+                    <p class="w-[250px] md:w-[500px] text-white text-base md:text-base tracking-wider ">Lorem ipsum dolor
+                        sit
                         amet consectetur adipisicing elit. Mollitia porro, reiciendis tenetur eveniet obcaecati temporibus!
                     </p>
                 </div>
@@ -78,28 +87,28 @@
                 <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/1.png" alt="" width="125">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/2.png" alt="" width="150">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/3.png" alt="" width="175">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/4.png" alt="" width="150">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/5.png" alt="" width="125">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/6.png" alt="" width="175">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/7.png" alt="" width="125">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/8.png" alt="" width="100">
                 </div>
-                <div class="w-60 flex justify-center items-center">
+                <div class="md:w-60 flex justify-center items-center">
                     <img src="/img/brands/9.png" alt="" width="100">
                 </div>
 

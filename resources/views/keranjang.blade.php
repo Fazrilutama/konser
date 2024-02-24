@@ -6,6 +6,12 @@
 @section('body')
     <div class="mt-20 ">
         <div class="container mx-auto">
+            @if (Session::has('pesan'))
+                <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+                    role="alert">
+                    <span class="font-medium">{{ Session::get('pesan') }}</span>
+                </div>
+            @endif
             <div class="my-10">
                 <p class="text-3xl font-bold py-3 ml-64">Pesanan</p>
             </div>
@@ -39,7 +45,9 @@
                             <p>Anda sudah membayar.</p>
                             <p> Code Order: <span class="font-bold"> {{ $do->order->code }} </span></p>
                             <p>
-                                <a href="{{ route('printInvoiceTicket', $do->id)  }}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Print Tiket</a>
+                                <a href="{{ route('printInvoiceTicket', $do->id) }}"
+                                    class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Print
+                                    Tiket</a>
                             </p>
                         @elseif ($do->status_pembayaran == 'rejected')
                             <p class="font-bold">Maaf, pembayaran Anda ditolak.</p>
@@ -117,5 +125,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection

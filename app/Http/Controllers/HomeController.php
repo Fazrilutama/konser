@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function keranjang(){
 
         $userId = auth()->user()->id;
-        $detailOrder = detailOrder::with('event')->where('user_id', $userId)->get();
+        $detailOrder = detailOrder::with('event')->where('user_id', $userId)->latest()->get();
         return view('keranjang', compact('detailOrder'));
     }
 
@@ -46,7 +46,7 @@ class HomeController extends Controller
             'status_pembayaran'=> 'pending',
             'price_total' => $event->price * $request->banyak
         ]);
-        return redirect()->route('keranjang');
+        return redirect()->route('keranjang')->with('pesan', 'Berhasil ditambahkan......Silahkan Bayar');
 
     }
 
@@ -75,7 +75,7 @@ class HomeController extends Controller
         $event->stock -= $detailOrder->qty;
         $event->save();
 
-        return redirect()->route('keranjang');
+        return redirect()->route('home')->with('bayar', 'proses pembayaran Anda sedang dalam tahap konfirmasi');
     }
 
 
