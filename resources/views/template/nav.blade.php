@@ -4,7 +4,7 @@
         @if (auth()->user()->role == 'user')
             <div class="flex items-center text-lg justify-between mx-3 md:mx-8">
                 <img src="/img/logo.png" alt="" class="w-14 md:w-20">
-                <div class="flex items-center gap-3 text-sm md:text-xl md:gap-10 ">
+                <div class="flex items-center gap-3 text-xs md:text-xl md:gap-10 ">
                     <a href="/" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
                     <a href="{{ route('keranjang') }}" class="text-white font-semibold hover:text-emerald-400">Pesanan</a>
                     <a href="#event" class="text-white font-semibold hover:text-emerald-400">Event</a>
@@ -48,7 +48,7 @@
                 <a href="{{ route('home') }}">
                     <img src="/img/logo.png" alt="" class="w-14 md:w-20">
                 </a>
-                <div class="flex items-center gap-3 text-base md:gap-10 md:text-xl ">
+                <div class="flex items-center gap-3 text-sm md:gap-10 md:text-xl ">
                     <a href="{{ route('home') }}" class="text-white font-semibold hover:text-emerald-400">Beranda</a>
                     <a href="#event" class="text-white font-semibold hover:text-emerald-400">Event</a>
                     <a href="#brands" class="text-white font-semibold hover:text-emerald-400">Partner</a>

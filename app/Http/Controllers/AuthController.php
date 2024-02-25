@@ -65,7 +65,7 @@ class AuthController extends Controller
         } else {
             return redirect()->route('home');
         }
-        return redirect()->route('home')->with('notif', 'Loggin Success');;
+        return redirect()->route('home')->with('login', 'Loggin Success');;
     }
 
 
@@ -73,7 +73,7 @@ class AuthController extends Controller
         if (auth()->check()) {
             Auth::logout();
         }
-        return redirect()->route('home');
+        return redirect()->route('home')->with('logout' , "Berhasil Logout.....Sampai jumpa kembali");
     }
 
     public function admin(){
