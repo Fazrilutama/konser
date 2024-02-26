@@ -44,15 +44,15 @@ class AuthController extends Controller
 
     public function postLogin(Request $request){
         $validator = Validator::make($request->all(), [
-            'email'=>'required|email',
-            'password'=>'required'
+            'email'=> 'required|email',
+            'password'=> 'required'
         ]);
         if ($validator->fails()) {
-            return redirect()->back()->with('Message', 'Email atau password salah!!');
+            return redirect()->back()->with('message', 'Field Harus Diisi!!');
         }
 
         if (!Auth::attempt($request->only(['email', 'password']))) {
-            return redirect()->back()-with('Message', 'Email atau password salah!!');
+            return redirect()->back()->with('message', 'Email atau password salah!!');
         }
 
         $user = Auth::user();

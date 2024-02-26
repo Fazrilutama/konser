@@ -6,9 +6,9 @@
 
 
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-        @if (Session::has('Message'))
+        @if (Session::has('message'))
             <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                <span class="font-medium">{{ Session::get('Message') }}</span>
+                <span class="font-medium">{{ Session::get('message') }}</span>
             </div>
         @endif
         @if (Session::has('notif'))

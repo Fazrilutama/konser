@@ -9,17 +9,19 @@
 
     <div>
         @if (Session::has('bayar'))
-            <div class="p-4 mt-20 mb-4 text-sm text-green-800 rounded-lg" role="alert">
+            <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+                role="alert">
                 <span class="font-medium">{{ Session::get('bayar') }}</span>
             </div>
         @endif
         <div>
 
             @if (Session::has('logout'))
-                <div class="p-4 mt-20 mb-4 text-sm text-green-800 rounded-lg" role="alert">
-                    <span class="font-medium">{{ Session::get('logout') }}</span>
-                </div>
-            @endif
+            <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+                role="alert">
+                <span class="font-medium">{{ Session::get('logout') }}</span>
+            </div>
+        @endif
             <div class="h-screen bg-cover " style="background-image: url('{{ asset('/img/bg-4.jpg') }}');" id="home">
                 <div class=" container mx-auto ">
 
